@@ -58,11 +58,6 @@ Spinning-Sip/
 
 ---
 
-## 🌐 Live Demo
-
-
----
-
 ## 📌 Author
 
 Lakshita Mangal
