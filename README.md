@@ -22,8 +22,8 @@ The website provides an elegant coffee shop experience with stylish sections, ha
 
 ## 🛠️ Technologies Used
 
-- HTML5
-- CSS3
+- HTML
+- CSS
 - Font Awesome Icons
 - Google Fonts
 
