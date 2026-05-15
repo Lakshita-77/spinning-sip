@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Cafe Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family:"Akaya Kanadaka", serif;
+            margin: 0;
+            padding: 0;
+            background-color:whitesmoke;
+        }
+        
+        header {
+            background-color: #652a10;
+            color:white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .blog-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .blog-post {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #323030;
+            padding-bottom: 20px;
+        }
+
+        .blog-post img {
+            width: 100%;
+            max-width: 400px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .blog-post-content {
+            flex: 1;
+        }
+
+        .blog-post h2 {
+            font-size: 24px;
+            color: #333;
+            margin-top: 0;
+        }
+
+        .blog-post p {
+            font-size: 16px;
+            color: #19181896;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #ff7f50;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* footer */
+        footer {    
+            position: relative;
+            background-color: #652a10;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            width: 22%;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #f39c12;
+        }
+
+        .footer-section p {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .footer-section ul {
+            list-style-type: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f39c12;
+        }
+
+        .footer-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-section form input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .footer-section form button {
+            padding: 10px;
+            background-color: #f39c12;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-section form button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Google Maps Embed Section */
+        .google-maps {
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+            border: 0;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .footer-bottom a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #f39c12;
+        }
+        .back-to-top {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 80%;
+        text-align: center;
+    }
+
+    .footer-bottom {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Coffee Cafe Blog</h1>
+        <p>Brewing inspiration, one cup at a time.</p>
+    </header>
+
+    <div class="blog-section">
+        <div class="blog-post">
+            <img src="Blog-about/blog1.jpg" alt="Coffee Latte Art">
+            <div class="blog-post-content">
+                <h2>The Art of Latte: A Beginner's Guide</h2>
+                <p>Discover the world of latte art and how it can elevate your coffee experience. From the basics of steaming milk to mastering designs, learn all the tips to make your own beautiful creations.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <img src="Blog-about/blog2.jpg" alt="Fresh Coffee Beans">
+            <div class="blog-post-content">
+                <h2>From Bean to Brew: The Journey of Coffee</h2>
+                <p>Ever wondered where your coffee comes from? Join us on a journey from the coffee farms to the roasters, and understand the process that brings your morning brew to life.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="blog-post">
+            <img src="Blog-about/blog3.jpg" alt="Coffee Shop Ambience">
+            <div class="blog-post-content">
+                <h2>Creating the Perfect Coffee Shop Atmosphere</h2>
+                <p>Learn how we create the perfect ambiance in our coffee shop to enhance your experience. From lighting to music and furniture, every detail matters for that perfect cup of coffee.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </div>
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section about">
+            <h3>Coffee Cafe</h3>
+            <p>We bring you the finest coffee blends, straight from the bean to your cup. Come for the coffee, stay for the experience.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><i class="fa-solid fa-square-envelope"></i> : spinningsips@gmil.com</li>
+                <li><i class="fa-solid fa-phone"></i> : +91 3232456789</li>
+                <li><i class="fa-solid fa-location-dot"></i> : Spinning Sips,Sector-5, Gurgaun </li>
+            </ul>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i>:@Spinningsips</a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i>:@Spinningsips</a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i>:@Spinningsips</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-section newsletter">
+            <h3>Subscribe to our Newsletter</h3>
+            <form action="#" method="post">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <iframe class="google-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1176499386045!2d-122.41941568468387!3d37.77492977975944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815d6e3e9cb5%3A0x909b6b39a9d9d5ee!2sBrewtown%2C%20CO%2012345!5e0!3m2!1sen!2sus!4v1674555936211!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Coffee Cafe. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+</footer>
+
+<script>
+    // Scroll to Top Function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }    
+</script>
+    
+</body>
+</html>

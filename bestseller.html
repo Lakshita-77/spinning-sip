@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bestseller</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family:"Akaya Kanadaka", serif;
+            margin: 0;padding: 0;
+            box-sizing: border-box;
+            outline: none;border: none;
+            text-transform: capitalize;
+            transition: all.2s ease-out;
+            text-decoration: none;
+        }
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("back3.jpg");
+        }
+        .header
+        {
+            padding: 2rem 9%;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            box-shadow: 0.5rem 1.5rem rgba(0,0,0,.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #652a10;
+        }
+        .logo {
+            width: 80px;
+            height: 70px;
+            border-radius: 50%;
+        }
+        .navbar a
+        {
+            font-size: 1.9rem;
+            color:whitesmoke;
+            margin-left: 2rem;
+        
+        }
+        .navbar a:hover{
+            color: #f39c12;
+            background-color: transparent;
+            border-radius: 1.5rem;
+            /* box-shadow: 0 0 8px #00ff99, 0 0 15px #00ff99, 0 0 20px #00ff99;*/
+            padding-left: 40px;
+            transform: scale(1.05);
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Animation for button hover */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            gap: 1.5rem;
+            padding: 40px;
+            justify-content: center;
+            margin-top: 80px;
+        }
+
+        .menu-box {
+            background: #AB6832;
+            padding: 20px;
+            border-radius: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+            transition: transform 0.3s ease;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .menu-box:hover {
+            transform: scale(1.05); 
+        }
+
+        .menu-box img {
+            width: 120px;  
+            height: 120px; 
+            border-radius: 50%; /* Makes the image round */
+            object-fit: cover; 
+            margin-bottom: 15px;
+        }
+
+        .menu-box h1 {
+            font-size: 1.25rem; 
+            font-weight: bold;
+            margin: 10px 0;
+            color: #333;
+            text-align: center;
+        }
+        .menu-box h2{
+            font-size: 0.85rem;
+            font-weight: 100;
+            color: #333;
+            text-align: center;
+        }
+
+        .menu-info span {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .add-item-btn {
+            background-color: #D3AC5F;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-item-btn:hover {
+            animation: pluse 0.6s infinite;
+            background-color: #e59c0c;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                padding: 20px;
+            }
+
+            .menu-box {
+                padding: 15px;
+            }
+
+            .menu-box h1 {
+                font-size: 1.125rem;
+            }
+        }
+        /* footer */
+footer {
+    position: relative;
+    background-color: #652a10;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 22%;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f39c12;
+}
+
+.footer-section p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.footer-section form button {
+    padding: 10px;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-section form button:hover {
+    background-color: #e67e22;
+}
+
+/* Google Maps Embed Section */
+.google-maps {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    border: 0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #f39c12;
+}
+.back-to-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 80%;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html"><img src="logo.jpg" alt="Website Logo" class="logo"></a>
+        <nav class="navbar">
+            <a href="bestseller.html">bestseller</a>
+            <a href="order.html">drink</a>
+            <a href="food.html">food</a>
+        </nav>    
+    </header>
+
+
+<br><br>
+
+    <div class="menu">
+        <div class="menu-box">
+            <img src="drink\Caffee_Americano.webp" alt="">
+            <h1>Caffee Americano</h1>
+            <div class="menu-info">
+                <span><i class="fa-solid fa-indian-rupee-sign"></i>299.25</span>
+            </div>
+            <button class="add-item-btn">Add Item</button>
+        </div>
+        <div class="menu-box">
+            <img src="drink\classic_hot_coffee.webp" alt="">
+            <h1>classic Hot Coffee</h1>
+            <div class="menu-info">
+                <span><i class="fa-solid fa-indian-rupee-sign"></i>157.50</span>
+            </div>
+            <button class="add-item-btn">Add Item</button>
+        </div>
+        <div class="menu-box">
+            <img src="drink\iced_vienna_creamy_latte.webp" alt="">
+            <h1>Iced Vienna Creamy Latte</h1>
+            <div class="menu-info">
+                <span><i class="fa-solid fa-indian-rupee-sign"></i>417.35</span>
+            </div>
+            <button class="add-item-btn">Add Item</button>
+        </div>
+        <div class="menu-box">
+            <img src="drink\Chocolate_Cappuccino.webp" alt="">
+            <h1>Chocolate Cappuccino</h1>
+            <div class="menu-info">
+                <span><i class="fa-solid fa-indian-rupee-sign"></i>357</span>
+            </div>
+            <button class="add-item-btn">Add Item</button>
+        </div>
+        <div class="menu-box">
+            <img src="food\almond_butterscotch_cookie.jpg" alt="">
+            <h1>Almond Butterscotch Cookie</h1>
+            <h2>PER SERVE(85gm)-370kcal</h2>
+            <div class="menu-info">
+                <span><i class="fa-solid fa-indian-rupee-sign"></i>299.50</span>
+            </div>
+            <button class="add-item-btn">Add Item</button>
+        </div>
+        
+            <div class="menu-box">
+                <img src="food\chocolate_chip_cookie.jpg" alt="">
+                <h1>Chocolate Chip Cookie</h1>
+                <h2>PER SERVE(95gm)-428kcal</h2>
+                <div class="menu-info">
+                    <span><i class="fa-solid fa-indian-rupee-sign"></i>207.75</span>
+                </div>
+                <button class="add-item-btn">Add Item</button>
+            </div>
+            <div class="menu-box">
+                <img src="food\double_chocolate_chip_cookie.jpg" alt="">
+                <h1>Double Chocolate Chip Cookie</h1>
+                <h2>PER SERVE(80gm)-385.5kcal</h2>
+                <div class="menu-info">
+                    <span><i class="fa-solid fa-indian-rupee-sign"></i>294</span>
+                </div>
+                <button class="add-item-btn">Add Item</button>
+            </div>
+            <div class="menu-box">
+                <img src="food\Red_Velvet_cookie.png" alt="">
+                <h1>Red Velvet Cookie</h1>
+                <h2>PER SERVE(95gm)-462kcal</h2>
+                <div class="menu-info">
+                    <span><i class="fa-solid fa-indian-rupee-sign"></i>204.75</span>
+                </div>
+                <button class="add-item-btn">Add Item</button>
+            </div>
+            
+        <div class="menu-box">
+            <img src="food\Bake_In_Mushrrom_Cheese_Melt_Babuette_SW.webp" alt="">
+            <h1>Bake In Mushrrom Cheese Melt Babuette SW</h1>
+            <div class="menu-info">
+                <span><i class="fa-solid fa-indian-rupee-sign"></i>472.50</span>
+            </div>
+            <button class="add-item-btn">Add Item</button>
+        </div>
+        
+            <div class="menu-box">
+                <img src="food\Avocado_Salsa_Sandwich.webp" alt="">
+                <h1>Avocado Salsa Sandwich</h1>
+                <div class="menu-info">
+                    <span><i class="fa-solid fa-indian-rupee-sign"></i>451.50</span>
+                </div>
+                <button class="add-item-btn">Add Item</button>
+            </div>
+            <div class="menu-box">
+                <img src="food\Basil_Tomato_Mozzarella_Cheese_Sandwich.webp" alt="">
+                <h1>Basil Tomato Mozzarella Cheese Sandwich</h1>
+                <div class="menu-info">
+                    <span><i class="fa-solid fa-indian-rupee-sign"></i>383.25</span>
+                </div>
+                <button class="add-item-btn">Add Item</button>
+            </div>
+            <div class="menu-box">
+                <img src="food\Grilled_Harissa_Chicken_Sourdough.webp" alt="">
+                <h1>Grilled Harissa Chicken Sourdough</h1>
+                <div class="menu-info">
+                    <span><i class="fa-solid fa-indian-rupee-sign"></i>446.15</span>
+                </div>
+                <button class="add-item-btn">Add Item</button>
+            </div>
+            
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section about">
+                <h3>Coffee Cafe</h3>
+                <p>We bring you the finest coffee blends, straight from the bean to your cup. Come for the coffee, stay for the experience.</p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fa-solid fa-square-envelope"></i> : spinningsips@gmil.com</li>
+                    <li><i class="fa-solid fa-phone"></i> : +91 3232456789</li>
+                    <li><i class="fa-solid fa-location-dot"></i> : Spinning Sips,Sector-5, Gurgaun </li>
+                </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i>:@Spinningsips</a></li>
+                    <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i>:@Spinningsips</a></li>
+                    <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i>:@Spinningsips</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="footer-section newsletter">
+                <h3>Subscribe to our Newsletter</h3>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Google Maps Embed -->
+        <iframe class="google-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1176499386045!2d-122.41941568468387!3d37.77492977975944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815d6e3e9cb5%3A0x909b6b39a9d9d5ee!2sBrewtown%2C%20CO%2012345!5e0!3m2!1sen!2sus!4v1674555936211!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Coffee Cafe. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+        <button class="back-to-top" onclick="scrollToTop()">↑</button>
+    </footer>
+
+    <script>
+        // Scroll to Top Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }    
+    </script>
+</body>
+</html>

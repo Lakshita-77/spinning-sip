@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Cafe - About Us & Meet Our Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+   <!-- <link rel="stylesheet" href="style.css">-->
+    <style>
+        *{
+            text-decoration: none;
+        }
+        body {
+            font-family: "Akaya Kanadaka", serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(back3.jpg); 
+            transition: all.2s ease-out;
+        }
+        .header{
+            background-color: #652a10;
+            border-bottom: 2px solid #C4A58A;
+            padding: 2rem 9%;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            box-shadow: 0.5rem 1.5rem rgba(0,0,0,.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 80px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .navbar a{
+            font-size: 1.9rem;
+            margin-left: 2rem;
+            color:whitesmoke;
+        }
+        .navbar a:hover{   
+            color: #f39c12;
+            background-color: transparent;
+            border-radius: 1.5rem;
+            padding-left: 40px;
+            transform: scale(1.05);
+            text-decoration: underline;
+        }
+        .login{
+            font-size: 1.9rem;
+            color: #fff;
+        }
+        .login i{
+            color:#f39c12;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        section {
+            padding: 50px 0;
+            opacity: 0;
+            transition: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+        section:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.7em;
+            color: rgb(81, 45, 7);
+        }
+
+        .about-us, .team {
+            text-align: center;
+        }
+
+        .about-us p {
+            font-size: 1.75em;
+            font-size: x-large;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgb(78, 42, 9);
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 50px;
+            color: #4A3A34;
+        }
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            background-color: #AB6832;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 250px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+        .team-member:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .team-member:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .team-member:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .team-member:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .team-member:nth-child(5) {
+            animation-delay: 1s;
+        }
+
+        .team-member:nth-child(6) {
+            animation-delay: 1.2s;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            margin: 15px 0 10px;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            color: black;
+        }
+         /* Keyframes for animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* footer */
+footer {
+    position: relative;
+    background-color: #652a10;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    width: 22%;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #f39c12;
+}
+
+.footer-section p {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.footer-section form button {
+    padding: 10px;
+    background-color: #f39c12;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-section form button:hover {
+    background-color: #e67e22;
+}
+
+/* Google Maps Embed Section */
+.google-maps {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+    border: 0;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #f39c12;
+}
+.back-to-top {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 80%;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        font-size: 12px;
+    }
+}
+       
+    </style>
+</head>
+<body>
+    <!--header-->
+    <header class="header">
+        <!-- <a href="#" class="logo"><i class="fa-solid fa-mug-saucer"></i></a>-->
+        <a href="index.html"></href><img src="logo.jpg" alt="Website Logo" class="logo"></a>
+ 
+         <nav class="navbar">
+             <a href="#home">Home</a>
+             <a href="bestseller.html">Menu</a>
+             <a href="about_us.html">About Us</a>
+             <a href="contect.html">Contact</a>
+             <a href="blog.html">Blogs</a>
+         </nav>
+ 
+         <a href="login.html" class="login"><i class="fa-solid fa-user"></i>Login</a>
+     </header>
+
+     <br><br><br><br><br>
+
+    <div class="container">
+        <!-- About Us Section -->
+        <section class="about-us">
+            <h2>About Us</h2>
+            <p>At Coffee Cafe, we are passionate about serving the finest coffee in town. Whether you are looking for a relaxing space to enjoy a cup of coffee or a quick caffeine boost on the go, we are here to provide you with the best experience. Our cozy cafe offers a variety of freshly brewed coffees, delicious pastries, and an inviting atmosphere for everyone. Come, relax, and enjoy the perfect brew.</p>
+        </section>
+
+        <!-- Meet Our Team Section -->
+        <h1>Meet Our Team</h1>
+        <section class="team">
+            <div class="team-member">
+                <img src="Blog-about/about.webp" alt="Team Member 1">
+                <h3>John Doe</h3>
+                <p>Head Barista</p>
+                <p>With over 10 years of experience, John brings passion and expertise to every cup of coffee. His knowledge of coffee beans and brewing techniques ensures that every customer gets a perfect brew.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="Blog-about/about2.webp" alt="Team Member 2">
+                <h3> Olive Winter </h3>
+                <p>Barista</p>
+                <p> Olive is dedicated to providing an exceptional customer experience. Her friendly attitude and attention to detail make every visit to Coffee Cafe a memorable one.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="Blog-about/about3.jpg" alt="Team Member 3">
+                <h3>Darika</h3>
+                <p>Cafe Manager</p>
+                <p>Darika is a free spirit with a sharp sense of organization. Her playful nature is balanced by an innate ability to handle the day-to-day flow of the cafe with grace and precision.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="Blog-about/about4t.jpg" alt="Team Member 1">
+                <h3>Aadrik</h3>
+                <p>Shift Supervisor</p>
+                <p>Aadrik is the embodiment of calm in the midst of chaos. On particularly busy days, he’s the one who keeps things steady, making sure everyone on the team is in sync. </p>
+            </div>
+
+            <div class="team-member">
+                <img src="Blog-about/about5.jpg" alt="Team Member 2">
+                <h3>Jane Smith</h3>
+                <p>Coffee Educator</p>
+                <p>Jane is dedicated to providing an exceptional customer experience. Her friendly attitude and attention to detail make every visit to Coffee Cafe a memorable one.</p>
+            </div>
+
+            <div class="team-member">
+                <img src="Blog-about/about6.jpg" alt="Team Member 3">
+                <h3>Michael Brown</h3>
+                <p>Baker</p>
+                <p>Michael's delicious pastries are the perfect pairing with our coffee. He brings his culinary skills and creativity to ensure that every treat is as fresh and flavorful as possible.</p>
+            </div>
+        </section>
+    </div>
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section about">
+            <h3>Coffee Cafe</h3>
+            <p>We bring you the finest coffee blends, straight from the bean to your cup. Come for the coffee, stay for the experience.</p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><i class="fa-solid fa-square-envelope"></i> : spinningsips@gmil.com</li>
+                <li><i class="fa-solid fa-phone"></i> : +91 3232456789</li>
+                <li><i class="fa-solid fa-location-dot"></i> : Spinning Sips,Sector-5, Gurgaun </li>
+            </ul>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i>:@Spinningsips</a></li>
+                <li><a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i>:@Spinningsips</a></li>
+                <li><a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i>:@Spinningsips</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-section newsletter">
+            <h3>Subscribe to our Newsletter</h3>
+            <form action="#" method="post">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <iframe class="google-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1176499386045!2d-122.41941568468387!3d37.77492977975944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085815d6e3e9cb5%3A0x909b6b39a9d9d5ee!2sBrewtown%2C%20CO%2012345!5e0!3m2!1sen!2sus!4v1674555936211!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Coffee Cafe. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+    <button class="back-to-top" onclick="scrollToTop()">↑</button>
+</footer>
+
+<script>
+    // Scroll to Top Function
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }    
+</script>
+    
+</body>
+</html>
